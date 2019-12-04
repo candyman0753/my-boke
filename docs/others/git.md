@@ -1,6 +1,6 @@
 # Git 常用命令
 
-1.  一处修改多支提交
+1.  一处修改多支提交  
     场景：公用基础版本，定制功能版本，修改基础版本代码提交到各定制版本，实现代码同步
 
     操作：
@@ -9,9 +9,9 @@
 
     ```js
     git log
-    commit 688643xx63xx5407c8bcc1xxba8a8xx2f426xx33 // 我是commit-id_1
-    commit AAAAAAxx63xx5407c8bcc1xxba8a8xx2f426xx33 // 我是commit-id_2
-    commit BBBBBBxx63xx5407c8bcc1xxba8a8xx2f426xx33 // 我是commit-id_3
+    commit A88643xx63... // 我是commit-id_3
+    commit AAAAAAxx63... // 我是commit-id_2
+    commit BBBBBBxx63... // 我是commit-id_1
     ```
 
     - 切换需要同步的分支
@@ -28,14 +28,14 @@
 
     ```js
     // 提交单个
-    git cherry-pick 688643xx63xx5407c8bcc1xxba8a8xx2f426xx33
+    git cherry-pick BBBBBBxx63
     // 提交多个
-    git cherry-pick BBBBBBxx63xx5407c8bcc1xxba8a8xx2f426xx33..688643xx63xx5407c8bcc1xxba8a8xx2f426xx33
+    git cherry-pick BBBBBBxx63..A88643xx63
     ```
 
-    ```tip
-    注意 .. 表示git log树中 commit-id_1 到 commit-id_3 之间所有commit，但不包括第一个(此处为commit-id_1)
-    ```
+    ::: tip
+    注意 .. 表示`git log`树中 commit-id_1 到 commit-id_3 之间所有 commit，但不包括第一个(此处为 commit-id_1)
+    :::
 
     - 当出现冲突时，先解决冲突，然后使用`git add`添加已解决冲突的文件到暂存区，最后继续同步
 
