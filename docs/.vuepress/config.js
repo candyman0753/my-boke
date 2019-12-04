@@ -1,4 +1,5 @@
 const sidebar = require("./sidebar");
+const monent = require("moment");
 
 module.exports = {
   base: "/my-boke/",
@@ -8,7 +9,19 @@ module.exports = {
   port: 8888,
   themeConfig: {
     editLinks: false,
+    lastUpdated: "上次更新",
     nav: [],
     sidebar: sidebar
-  }
+  },
+  plugins: [
+    [
+      "@vuepress/last-updated",
+      {
+        transformer: (timestamp, lang) => {
+          monent.locale("zh-CN");
+          return monent(timestamp).fromNow();
+        }
+      }
+    ]
+  ]
 };
