@@ -5,6 +5,11 @@ module.exports = [
   },
   {
     title: '其它',
-    children: [['others/', 'Start'], 'others/git']
+    children: [
+      ['others/', 'Start'],
+      'others/git',
+      'others/docker',
+      'others/nginx'
+    ]
   }
 ]
