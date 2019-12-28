@@ -11,16 +11,7 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "main": "index.js",
-  "directories": {
-    "doc": "docs"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/candyman0753/my-boke.git"
-  },
-  "bugs": {
-    "url": "https://github.com/candyman0753/my-boke/issues"
-  },
-  "homepage": "https://github.com/candyman0753/my-boke#readme"
+  "dependencies": {
+    "moment": "^2.24.0"
+  }
 }
