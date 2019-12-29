@@ -58,7 +58,6 @@ Docker 就是基于 linux 容器的封装，提供容器使用接口
 
    ```
    FROM python
-   MAINTAINER auth-name <auth@gamil.com>
    COPY . /app
    WORKDIR /app
    RUN pip install -r requirements.txt
@@ -69,8 +68,6 @@ Docker 就是基于 linux 容器的封装，提供容器使用接口
 
    ```
     # FROM <images-name> 指定基础镜像
-
-    # MAINTAINER 指定镜像作者信息
 
     # COPY <src> <dest> 复制主机目录<src>到容器目录<dest>
 

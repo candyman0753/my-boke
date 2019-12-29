@@ -1,0 +1,36 @@
+version: '2.0'
+
+services:
+  nginx: # 服务的名称
+    image: nginx
+    links:
+      - web1:web1
+      - web2:web2
+      - web3:web3
+    volumes: # 文件夹映射
+      - './nginx/nginx.conf:/etc/nginx/nginx.conf' # nginx 配置文件
+      - './web:/data'
+    ports: # 端口转发
+      - '8081:80'
+    container_name: compose-demo #自定义容器名
+  web1:
+    image: nginx
+    volumes: # 文件夹映射
+      - './web1/nginx.conf:/etc/nginx/nginx.conf'
+      - './web1:/data'
+    ports:
+      - '80'
+  web2:
+    image: nginx
+    volumes: # 文件夹映射
+      - './web1/nginx.conf:/etc/nginx/nginx.conf'
+      - './web2:/data'
+    ports:
+      - '80'
+  web3:
+    image: nginx
+    volumes: # 文件夹映射
+      - './web1/nginx.conf:/etc/nginx/nginx.conf'
+      - './web3:/data'
+    ports:
+      - '80'
